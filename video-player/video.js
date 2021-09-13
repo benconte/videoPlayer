@@ -8,13 +8,19 @@ let video = document.getElementById("video");
 let fullscreen = document.getElementById("fullscreen");
 let current_time = document.getElementById("current-time");
 let videoDuration = document.getElementById("duration");
+let video_loop = document.querySelector(".fa-retweet");
 
-let is_playing = true;
+let is_playing = false;
 let play = document.getElementById("play");
 let pause = document.getElementById("pause");
 
-video.autoplay = true;
-pause.style.display = "block";
+if (is_playing) {
+    pause.style.display = "block";
+
+} else {
+    play.style.display = "block";
+
+}
 
 // time function
 // function convertHMS(value) {
@@ -48,6 +54,14 @@ play.onclick = function() {
     pause.style.display = "block";
     play.style.display = "none";
 }
+
+video_loop.onclick = () => {
+    video.loop = true;
+    video_loop.style.color = "red";
+    video_loop.style.background = "#f7f7f7";
+    video_loop.style.fontSize = 22;
+}
+
 
 
 video.onloadeddata = () => {
