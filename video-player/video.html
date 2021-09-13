@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="video">
+        <video src="./vid/video1.mp4" id="video"></video>
+        <div class="controls">
+            <div class="title">
+                <span>Grown-ish<b>.</b> The Pilot</span>
+            </div>
+            <div class="player">
+                <div class="middle-controls">
+                    <!-- <i class="fas fa-backward"></i> -->
+                    <i class="fas fa-play" id="play"></i>
+                    <i class="fas fa-pause" id="pause"></i>
+                    <!-- <i class="fas fa-forward"></i> -->
+
+                </div>
+                <div class="bottom-controls">
+                    <div class="icons">
+                        <div class="left">
+                            <i class="fas fa-step-backward"></i>
+                            <i class="fas fa-step-forward"></i>
+                        </div>
+                        <div class="center">
+                            <span id="current-time">00:00</span>
+                            <div class="line"></div>
+                            <span id="duration">00:00</span>
+                        </div>
+                        <div class="right">
+                            <div class="volume">
+                                <i class="fas fa-volume-mute"></i>
+                                <div class="handle-volume">
+                                    <input type="range" min="0" value="100" max="100" id="slider" />
+                                    <div id="selector">
+                                        <div class="selectBtn"></div>
+                                    </div>
+                                    <div id="progress"></div>
+                                </div>
+                            </div>
+                            <div class="speed">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </div>
+                            <i class="fas fa-ellipsis-v"></i>
+                            <i class="fas fa-expand" id="fullscreen"></i>
+                        </div>
+
+                    </div>
+                    <div class="range-input">
+                        <input type="range" min="0" value="0" id="video-slider" />
+                        <div class="range-thumb" id="video-thumb"></div>
+                        <div id="video-progress"></div>
+                        <div id="selectValue"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="/video.js "></script>
+</body>
+
+</html>
+
+
+<!-- 
+
+.video .controls .player .bottom-controls .icons .right .volume .handle-volume input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    /* width: 200px; */
+    height: 8px;
+    border-radius: 20px;
+    outline: none;
+    /* padding: 5px 0; */
+}
+
+.video .controls .player .bottom-controls .icons .right .volume .handle-volume input::-webkit-slider-thumb {
+    /* -webkit-appearance: none; */
+    /* height: 20px;
+    width: 20px; */
+    cursor: pointer;
+    z-index: 3;
+    position: relative;
+    /* color: red; */
+}
+
+.video .controls .player .bottom-controls .icons .right .volume .handle-volume #selector {
+    height: 15px;
+    width: 15px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 100%;
+    z-index: 2;
+}
+
+.video .controls .player .bottom-controls .icons .right .volume .handle-volume #selector .selectBtn {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background: red;
+    border: 2px solid #f7f7f7;
+    cursor: pointer;
+}
+
+ -->
