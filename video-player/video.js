@@ -43,10 +43,7 @@ pause.onclick = function() {
     video.pause();
     pause.style.display = "none";
     play.style.display = "block";
-
-
 }
-
 
 play.onclick = function() {
     is_playing = true;
@@ -56,12 +53,16 @@ play.onclick = function() {
 }
 
 video_loop.onclick = () => {
-    video.loop = true;
-    video_loop.style.color = "red";
-    video_loop.style.background = "#f7f7f7";
-    video_loop.style.fontSize = 22;
-}
+    if (video.loop) {
+        video.loop = false;
+        video_loop.classList.toggle("active");
+    } else {
+        video.loop = true;
+        video_loop.classList.toggle("active");
+    }
 
+
+}
 
 
 video.onloadeddata = () => {
@@ -78,6 +79,22 @@ slider.oninput = function() {
     selector.style.left = (video.volume * 100) + "%";
     // console.log(video.volume * 100)
 
+}
+
+let mute_icon = document.querySelector(".fa-volume-mute");
+let muted = false;
+
+mute_icon.onclick = () => {
+    if (muted) {
+        video.muted = false;
+        muted = false;
+        mute_icon.classList.toggle("active");
+
+    } else {
+        video.muted = true;
+        muted = true;
+        mute_icon.classList.toggle("active");
+    }
 }
 
 // end of volume
@@ -101,6 +118,12 @@ video_slider.oninput = function() {
     video_progress.style.width = parseFloat((video.currentTime / video.duration) * 100) + "%";
     video_thumb.style.left = parseFloat((video.currentTime / video.duration) * 100) + "%";
 }
+
+video.addEventListener("ended", function() {
+    pause.style.display = "none";
+    play.style.display = "block";
+
+}, false)
 
 
 fullscreen.onclick = function() {
