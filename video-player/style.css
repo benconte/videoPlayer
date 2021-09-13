@@ -216,6 +216,12 @@ body {
     position: relative;
 }
 
+.video .controls .player .bottom-controls .icons .right .volume .fa-volume-mute.active {
+    background: #f7f7f7;
+    font-size: 18px;
+    color: red;
+}
+
 .video .controls .player .bottom-controls .icons .right .volume .handle-volume {
     position: absolute;
     top: -100px;
@@ -271,6 +277,12 @@ body {
     border: 2px solid #f7f7f7;
     background: red;
     border-radius: 50%;
+}
+
+.video .controls .player .bottom-controls .icons .right .fa-retweet.active {
+    background: #f7f7f7;
+    font-size: 18px;
+    color: red;
 }
 
 #progress {
