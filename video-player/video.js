@@ -17,10 +17,8 @@ let pause = document.getElementById("pause");
 
 if (is_playing) {
     pause.style.display = "block";
-
 } else {
     play.style.display = "block";
-
 }
 
 // time function
@@ -107,11 +105,18 @@ video.ontimeupdate = () => {
     video_progress.style.width = parseFloat((video.currentTime / video.duration) * 100) + "%";
     video_thumb.style.left = parseFloat((video.currentTime / video.duration) * 100) + "%";
 
-    // video_progress.style.width = parseInt(video.currentTime) / 100 + "%";
-    // video_thumb.style.left = parseInt(video.currentTime) / 100 + "%";
     var cs = parseInt(video.currentTime % 60)
     var cm = parseInt((video.currentTime / 60) % 60)
     current_time.textContent = cm + ':' + cs;
+
+    if (is_playing) {
+        pause.style.display = "block";
+        play.style.display = "none";
+    } else {
+        play.style.display = "block";
+        pause.style.display = "none";
+
+    }
 }
 
 video_slider.oninput = function() {
@@ -169,4 +174,13 @@ hide_speedPlanel.onclick = () => {
 function change_speed(value) {
     video.playbackRate = value;
 
+}
+
+let handle_restart = document.getElementById("restart");
+
+
+handle_restart.onclick = function() {
+    video.currentTime = 0;
+    video.pause();
+    is_playing = false;
 }
