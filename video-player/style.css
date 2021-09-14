@@ -158,7 +158,7 @@ body {
 
 .video .controls .player .bottom-controls .icons .left i {
     font-size: 18px;
-    margin: 0 4px;
+    margin: 0 2px;
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -236,6 +236,7 @@ body {
     visibility: hidden;
     opacity: 0;
     transition: .2s;
+    z-index: 2;
 }
 
 .video .controls .player .bottom-controls .icons .right .volume:hover .handle-volume {
@@ -283,6 +284,78 @@ body {
     background: #f7f7f7;
     font-size: 18px;
     color: red;
+}
+
+.video .controls .player .bottom-controls .icons .right .speed {
+    position: relative;
+}
+
+.video .controls .player .bottom-controls .icons .right .speed.active .fa-tachometer-alt {
+    background: #f7f7f7;
+    font-size: 18px;
+    color: red;
+}
+
+.video .controls .player .bottom-controls .icons .right .speed .handle-speed {
+    position: absolute;
+    top: -255px;
+    left: -120px;
+    width: 230px;
+    height: auto;
+    border-radius: 10px;
+    background: #333;
+    padding: 5px 10px;
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+    transition: .2s;
+}
+
+.video .controls .player .bottom-controls .icons .right .speed.active .handle-speed {
+    visibility: visible;
+    opacity: 1;
+}
+
+.video .controls .player .bottom-controls .icons .right .speed .handle-speed .form-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.video .controls .player .bottom-controls .icons .right .speed .handle-speed p {
+    font-weight: 400;
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.video .controls .player .bottom-controls .icons .right .speed .handle-speed .form-input div {
+    margin: 5px 0;
+    font-weight: 500;
+    color: #f4f4f4;
+    /* border-bottom: 1px solid rgb(113, 113, 113, .4); */
+}
+
+.video .controls .player .bottom-controls .icons .right .speed .handle-speed .cancel {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.video .controls .player .bottom-controls .icons .right .speed .handle-speed .cancel button {
+    height: 100%;
+    padding: 0 15px;
+    background: transparent;
+    border: 2px solid rgba(249, 249, 249, .7);
+    border-radius: 7px;
+    color: #f4f4f4;
+    cursor: pointer;
+    outline: none;
+}
+
+.video .controls .player .bottom-controls .icons .right .speed .handle-speed .cancel button:hover {
+    background: #444;
 }
 
 #progress {
