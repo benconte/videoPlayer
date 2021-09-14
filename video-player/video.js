@@ -9,6 +9,7 @@ let fullscreen = document.getElementById("fullscreen");
 let current_time = document.getElementById("current-time");
 let videoDuration = document.getElementById("duration");
 let video_loop = document.querySelector(".fa-retweet");
+let handle_speed = document.querySelector(".fa-tachometer-alt");
 
 let is_playing = false;
 let play = document.getElementById("play");
@@ -69,8 +70,9 @@ video.onloadeddata = () => {
     video_slider.max = video.duration;
     var vs = parseInt(video.duration % 60) //video seconds
     var vm = parseInt((video.duration / 60) % 60) //video minutes
-    console.log(vm + ':' + vs)
     videoDuration.textContent = vm + ':' + vs;
+    video.playbackRate = 1.0;
+    document.getElementById("speed3").setAttribute("checked", true);
 }
 
 slider.oninput = function() {
@@ -151,3 +153,20 @@ fullscreen.onclick = function() {
 //       document.msExitFullscreen();
 //     }
 //   }
+
+// handle speed
+let hide_speedPlanel = document.querySelector(".cancel");
+
+handle_speed.onclick = function() {
+    document.querySelector(".speed").classList.toggle("active");
+}
+
+hide_speedPlanel.onclick = () => {
+    document.querySelector(".speed").classList.toggle("active");
+
+}
+
+function change_speed(value) {
+    video.playbackRate = value;
+
+}
