@@ -12,8 +12,7 @@
 
 <body>
     <div class="video">
-        <!-- create a folder vid and put your videos  -->
-        <video src="#" id="video"></video>
+        <video src="./vid/video1.mp4" id="video"></video>
         <div class="controls">
             <div class="title">
                 <span>Grown-ish<b>.</b> The Pilot</span>
@@ -30,6 +29,7 @@
                     <div class="icons">
                         <div class="left">
                             <i class="fas fa-step-backward"></i>
+                            <i class="fas fa-square"></i>
                             <i class="fas fa-step-forward"></i>
                         </div>
                         <div class="center">
@@ -51,6 +51,53 @@
                             <i class="fas fa-retweet"></i>
                             <div class="speed">
                                 <i class="fas fa-tachometer-alt"></i>
+                                <div class="handle-speed">
+
+
+                                    <p>Please select your preferred speed</p>
+                                    <div class="form-input">
+                                        <div>
+                                            <input type="radio" id="speed1" name="speed" value="0.5" onclick="change_speed(0.5)">
+                                            <label for="speed1">0.5x</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" id="speed2" name="speed" value="0.75" onclick="change_speed(0.75)">
+                                            <label for="speed2">0.75x</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" id="speed3" name="speed" value="1.0" onclick="change_speed(1.0)">
+                                            <label for="speed3">1.0x (Normal)</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" id="speed4" name="speed" value="1.25" onclick="change_speed(1.25)">
+                                            <label for="speed4">1.25x</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" id="speed5" name="speed" value="1.75" onclick="change_speed(1.75)">
+                                            <label for="speed5">1.75x</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" id="speed6" name="speed" value="2.0" onclick="change_speed(2.0)">
+                                            <label for="speed6">2.0x</label>
+                                        </div>
+
+                                        <!-- <input type="radio" id="contactChoice1" name="contact" value="email">
+                                            <label for="contactChoice1">Email</label>
+
+                                            <input type="radio" id="contactChoice2" name="contact" value="phone">
+                                            <label for="contactChoice2">Phone</label>
+
+                                            <input type="radio" id="contactChoice3" name="contact" value="mail">
+                                            <label for="contactChoice3">Mail</label> -->
+
+                                    </div>
+                                    <div class="cancel">
+                                        <button>Cancel</button>
+                                    </div>
+
+
+
+                                </div>
                             </div>
                             <i class="fas fa-ellipsis-v"></i>
                             <i class="fas fa-expand" id="fullscreen"></i>
